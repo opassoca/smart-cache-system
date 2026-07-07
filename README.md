@@ -2,14 +2,19 @@
 ### *Cache Sob Demanda — Limpeza Automática Inteligente*
 
 <div align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=4CAF50&center=true&vCenter=true&width=600&lines=SMART_CACHE+ACTIVE;1.+Limpando+caches+automaticamente;2.+Restore+sob+demanda;3.+Sem+1.6GB+ocupado+a+toa;4.+Seu+terminal+mais+leve;5.+Auto-detecta+projeto;6.+NPM/Cargo/Gradle;7.+CACHE_CLEAN_EXECUTED_[OK];8.+Espaco+liberado;9.+BUILD_WILL_DOWNLOAD_DEPS;10.+SYSTEM_READY" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=4CAF50&center=true&vCenter=true&width=600&lines=SMART_CACHE+ACTIVE;1.+Limpando+caches+automaticamente;2.+Restore+sob+demanda;3.+Libera+GBs+de+espaco;4.+Seu+terminal+mais+leve;5.+Auto-detecta+projeto;6.+NPM/Cargo/Gradle;7.+CACHE_CLEAN_EXECUTED_[OK];8.+Espaco+liberado;9.+BUILD_WILL_DOWNLOAD_DEPS;10.+SYSTEM_READY" alt="Typing SVG" />
 </div>
 
 ---
 
 ## 🧠 O Problema
 
-Caches de dependências (`.npm`, `.gradle`, `.cargo`) ocupam **1.6 GB+** mesmo quando não usados.
+Caches de dependências (`.npm`, `.gradle`, `.cargo`) podem ocupar **vários gigabytes** mesmo quando não usados.
+
+Exemplos típicos:
+- `.npm/` → 300-500 MB
+- `.gradle/` → 500 MB - 2 GB
+- `.cargo/` → 200 MB - 1 GB
 
 ## ⚡ A Solução
 
