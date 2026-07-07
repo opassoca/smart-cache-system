@@ -1,0 +1,20 @@
+#!/bin/bash
+# Smart cache wrapper for cargo/rust
+# Auto-fetches dependencies if cache is missing
+
+CARGO_REGISTRY="$HOME/.cargo/registry"
+
+restore_cargo_cache() {
+    if [ -f Cargo.toml ]; then
+        echo "🦀 Cargo cache missing - fetching dependencies..."
+        cargo fetch --quiet 2>&1 || true
+    fi
+}
+
+# Check if registry cache exists
+if [ ! -d "$CARGO_REGISTRY/src" ] && [ -f Cargo.toml ]; then
+    restore_cargo_cache
+fi
+
+# Execute actual cargo command
+exec cargo "$@"

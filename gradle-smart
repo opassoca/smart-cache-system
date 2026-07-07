@@ -1,0 +1,20 @@
+#!/bin/bash
+# Smart cache wrapper for gradle
+# Auto-downloads dependencies if cache is missing
+
+GRADLE_CACHE="$HOME/.gradle/caches"
+
+restore_gradle_cache() {
+    if [ -f build.gradle ] || [ -f build.gradle.kts ] || [ -f settings.gradle ]; then
+        echo "🐘 Gradle cache missing - downloading dependencies..."
+        gradle dependencies --quiet 2>&1 || true
+    fi
+}
+
+# Check if gradle cache exists
+if [ ! -d "$GRADLE_CACHE" ] && { [ -f build.gradle ] || [ -f build.gradle.kts ]; }; then
+    restore_gradle_cache
+fi
+
+# Execute actual gradle command
+exec gradle "$@"

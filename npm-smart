@@ -1,0 +1,20 @@
+#!/bin/bash
+# Smart cache wrapper for npm/node
+# Auto-restores dependencies if cache is missing
+
+CACHE_DIR="${NPM_CONFIG_CACHE_DIR:-$HOME/.npm}"
+
+restore_npm_cache() {
+    if [ -f package.json ]; then
+        echo "📦 NPM cache missing - installing dependencies..."
+        npm install --loglevel=error 2>&1 | head -5
+    fi
+}
+
+# Check if cache exists
+if [ ! -d "$CACHE_DIR/_cacache" ] && [ -f package.json ]; then
+    restore_npm_cache
+fi
+
+# Execute actual npm command
+exec npm "$@"
