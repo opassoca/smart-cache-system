@@ -45,11 +45,28 @@ $ npm run build
 
 ## 🛠️ Instalação
 
+### Opção 1: Instalador Automático (Recomendado)
+
+```bash
+# Via curl (instala e configura tudo)
+curl -fsSL https://raw.githubusercontent.com/opassoca/smart-cache-system/master/install.sh | bash
+
+# Ou via git
+git clone https://github.com/opassoca/smart-cache-system.git
+cd smart-cache-system
+./install.sh
+```
+
+### Opção 2: Manual
+
 ```bash
 # Clone no seu diretório de scripts
 cd ~
 mkdir -p .local/bin
-curl -o ~/.local/bin/smart-cache.sh <URL_DO_REPO>/raw/main/smart-cache.sh
+
+# Baixe os scripts
+curl -o ~/.local/bin/smart-cache.sh \
+    https://raw.githubusercontent.com/opassoca/smart-cache-system/master/smart-cache.sh
 chmod +x ~/.local/bin/smart-cache.sh
 
 # Adicione ao .bashrc
